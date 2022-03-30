@@ -49,12 +49,11 @@ const operators = document.querySelectorAll(".operator")
 operators.forEach((operator) => {
     operator.addEventListener('click', (event) => {
         inputOperator(event.target.value)
-        
     })
 })
 
 const equalSign = document.querySelector('.equal-sign')
-equalSign.addEventListener('click', () => {
+equalSign.addEventListener('click', (event) => {
     calculate()
     updateScreen(currentNumber)
 })
