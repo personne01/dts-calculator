@@ -7,6 +7,7 @@ const numbers = document.querySelectorAll(".number")
 
 const updateScreen = (number) => {
     calculatorScreen.value = number // mengisi nilai penampilnya dengan variabel number
+    
 }
 
 numbers.forEach((number)=>{ // mengambil setiap nilai numbernya 
@@ -40,9 +41,11 @@ numbers.forEach((number) => {
 // ini adalah bagian operator aritmatikanya
 
 const inputOperator = ((operator)=>{
-    prevNumber = currentNumber
+    if (calculationOperator === '') {
+        prevNumber = currentNumber
+    }
     calculationOperator = operator
-    currentNumber = ''
+    currentNumber = '0'
 })
 
 const operators = document.querySelectorAll(".operator")
@@ -72,9 +75,14 @@ const calculate = () => {
         case '/':
             result = parseFloat(prevNumber) / parseFloat(currentNumber)
             break;
+        case '%':
+            result = 100 / parseFloat(currentNumber) * parseFloat(prevNumber) + '%'
+        break;
+        
         default:
             return
     }
+    
     currentNumber = result
     calculationOperator = ''
 }
