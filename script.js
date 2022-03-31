@@ -111,3 +111,38 @@ decimal.addEventListener('click', (event) => {
     inputDecimal(event.target.value)
     updateScreen(currentNumber)
 })
+
+
+//for mode
+let mode = 'basicmode'
+const custommode = document.querySelectorAll('.mode-button')
+custommode.forEach((inputmode)=>{
+    inputmode.addEventListener('click', (event) =>{
+        mode = event.target.name
+        switch (mode) {
+            case 'darkmode':
+                darkmode()
+                break;
+            case 'basicmode':
+                mode='basicmode'
+                break;
+            case 'neumorphism':
+                neumorphism();
+                break;
+            case 'classicmode':
+                console.log('ini classicmode')
+                break;
+            default:
+                break;
+        }
+    })
+})
+
+
+const darkmode = () => {
+    document.body.classList.toggle("darkbody");
+}
+
+const neumorphism = () => {
+    document.body.classList.toggle("neubody");
+}
