@@ -6,8 +6,13 @@ h1 {
 .darkbody {
   background-color: #252525;
 }
-.neubody {
-  background-color: aliceblue;
+
+ion-icon{
+  cursor: pointer;
+}
+.mode-button{
+  border-radius: 20px;
+  margin: 10px;
 }
 
 .mode {
@@ -51,10 +56,6 @@ button {
   color: #fff;
   width: 25%;
   outline: none;
-}
-.buttonneu {
-  background-color: aliceblue;
-  box-shadow: 5px 5px 10px #de9db0, -5px -5px 10px #ffcde4;
 }
 
 .all-clear,

@@ -113,23 +113,24 @@ decimal.addEventListener('click', (event) => {
 })
 
 
-//for mode
+//for styling by user
 let mode = 'basicmode'
 const custommode = document.querySelectorAll('.mode-button')
 custommode.forEach((inputmode)=>{
     inputmode.addEventListener('click', (event) =>{
-        mode = event.target.name
+        mode = event.target.id
         switch (mode) {
-            case 'darkmode':
+            case 'changeBackground':
                 darkmode()
+                
                 break;
             case 'basicmode':
-                mode='basicmode'
+                mode='changeButtonStyle'
                 break;
-            case 'neumorphism':
-                neumorphism();
+            case 'changeButton':
+                changeButton()
                 break;
-            case 'classicmode':
+            case 'changeOperator':
                 console.log('ini classicmode')
                 break;
             default:
@@ -141,8 +142,55 @@ custommode.forEach((inputmode)=>{
 
 const darkmode = () => {
     document.body.classList.toggle("darkbody");
+    document.getElementById('#header').classList.toggle = ("headerdark");
 }
 
-const neumorphism = () => {
-    document.body.classList.toggle("neubody");
+const changeButton = () => {
+    const changeBtn = document.querySelectorAll('.btn')
+    const changeOp = document.querySelectorAll('.operator')
+    const randomColor = parseInt(Math.random() * 10);
+        changeBtn.forEach((newButton) => { 
+            console.log(randomColor)
+            switch(randomColor){
+                case 1:
+                    newButton.style.backgroundColor = '#864879'
+                    changeOp.forEach((newOp) => {
+                        newOp.style.backgroundColor = '#EBE645'
+                    })
+                    break;
+                case 2:
+                    newButton.style.backgroundColor = '#632626'
+                    changeOp.forEach((newOp) => {
+                        newOp.style.backgroundColor = '#9D5353'
+                    })
+                    break;
+                case 3:
+                    newButton.style.backgroundColor = '#2C3333'
+                    changeOp.forEach((newOp) => {
+                        newOp.style.backgroundColor = '#395B64'
+                    })
+                    break;
+                case 4:
+                    newButton.style.backgroundColor = '#D885A3'
+                    changeOp.forEach((newOp) => {
+                        newOp.style.backgroundColor = '#DADBBD'
+                    })
+                    
+                    break;
+                case 5:
+                    newButton.style.backgroundColor = '#52b788'
+                    changeOp.forEach((newOp) => {
+                        newOp.style.backgroundColor = '#DADBBD'
+                    })
+                    
+                    break;
+                case 6:
+                    newButton.style.backgroundColor = '#345B63'
+                    changeOp.forEach((newOp) => {
+                        newOp.style.backgroundColor = '#112031'
+                    })
+                default:
+                    break;
+            }
+        })
 }
